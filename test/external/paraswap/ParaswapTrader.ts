@@ -55,7 +55,6 @@ describe("ParaswapTrader", () => {
     await core.dolomiteMargin.ownerSetInterestSetter(core.marketIds.usdc, core.alwaysZeroInterestSetter.address);
 
     await setupUSDCBalance(core, core.hhUser1, usdcAmount, core.dolomiteMargin);
-    await core.usdc.connect(core.hhUser1).approve(core.gmxEcosystem!.glpManager.address, usdcAmount);
     await depositIntoDolomiteMargin(core, core.hhUser1, defaultAccount.number, core.marketIds.usdc, usableUsdcAmount);
 
     snapshotId = await snapshot();
